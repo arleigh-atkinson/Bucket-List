@@ -1,15 +1,16 @@
 source 'https://rubygems.org'
 
 
-
+ruby '2.2.2'
 gem 'devise', '~> 3.4.0'
 gem 'binding_of_caller'
 gem 'factory_girl_rails'
 gem 'materialize-sass'
 gem 'simplecov'
 gem 'shoulda-matchers'
-gem 'paperclip'
+gem "paperclip", "~> 4.3"
 gem 'rspec-rails'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

@@ -1,27 +1,20 @@
-activities index.html.haml
-.center
+%h2 Activities
 
-
-  %h2 Activites
-  %ul
-    %li
-      %h4
-        - @activity.each do |f|
-          %li
-            = f.title.capitalize
-          %li
-            = f.category.capitalize
-          %li
-            = f.description.capitalize
-          %hr
-        -# = @activity.first.title
-        -# = @activity.title.capitalize
-        -# = @activity.category.capitalize
-        -# = @activity.description.capitalize
-
-  %h2 Your Bucket List
-  %ul
-    / - for 
+%table
+  %thead
+    %tr
+      %th Title
+      %th Description
+      %th Image
+  %tbody
+    - @activities.each do |activity|
+      %tr
+        %td
+          = activity.title
+        %td
+          = activity.description
+        %td
+          = image_tag activity.image.url(:medium)
 
 
 

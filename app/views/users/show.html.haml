@@ -1,1 +1,15 @@
-SINGLE USER SHOW PAGE
+%h4.center-align  
+	= current_user.first_name  
+	= current_user.last_name 
+	= image_tag current_user.user_image.url
+%h5.center-align  
+	= current_user.description 
+%br
+%h4.center-align
+	Bucketlist Items :
+
+	%h4.center-align
+		%h5{:href => "#"} 
+			= link_to 'Add Activity', new_activity_path
+		%h5{:href => "#"} 
+			= link_to 'Remove an Activity', new_activity_path

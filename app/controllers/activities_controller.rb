@@ -1,7 +1,7 @@
 class ActivitiesController < ApplicationController
 	before_action :find_activity, only: [:show, :edit, :update, :destroy]
   def index
-  	@activity = Activity.all
+  	@activities = Activity.all
   end
 
   def show
@@ -10,18 +10,17 @@ class ActivitiesController < ApplicationController
   def edit
   end
 
-  def create
-  	@activity = Activity.new(user_params)
+	def new
+		@activity = Activity.new
+	end
 
+	def create
+		@activity = Activity.new(activity_params)
 	  if @activity.save
 	    redirect_to @activity
 	  else
 	    render 'new'
 	  end
-	end
-
-	def new
-		@activity = Activity.new
 	end
 
 	def update
@@ -34,14 +33,13 @@ class ActivitiesController < ApplicationController
 
 	def destroy
 		@activity.destroy method: :delete
-
 		redirect_to users_path
 	end
 
   private
 
-  def user_params
-  	params.require(:activity).permit(:first_name, :last_name, :description)
+  def activity_params
+  	params.require(:activity).permit(:title, :description, :image)
   end
 
   def find_activity

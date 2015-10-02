@@ -11,12 +11,14 @@
           %li
             = link_to 'Users', users_path        
           %li
-            = link_to 'Activities',activities_path  
+            = link_to 'All Activities',activities_path 
+          %li
+            = link_to 'New Activity', new_activity_path  
           %li
             %a.dropdown-button{"data-activates" => "dropdown1", :href => "#"}Your Profile
             %ul#dropdown1.dropdown-content
               %li
-                = link_to 'Show Profile', profile_path #TODO fix path
+                = link_to 'Show Profile', user_path(current_user.id) #Fixed it I think! -Arleigh
               %li.divide
               %li
                 =link_to 'Update Profile', edit_user_registration_path
