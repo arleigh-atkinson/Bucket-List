@@ -1,7 +1,8 @@
-%h4.center-align  
+%h4.center-align 
 	= current_user.first_name  
 	= current_user.last_name 
-	= image_tag current_user.user_image.url
+	= unless image_tag current_user.user_image.url(:medium)
+		= image_tag src: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAL4AAAAJDU3ZDZkODk2LTA0NjAtNGU5ZC05OGY2LTJhYjg0YTRjNmYxMA.jpg'
 %h5.center-align  
 	= current_user.description 
 %br
